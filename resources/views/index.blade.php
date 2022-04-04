@@ -10,8 +10,8 @@
   <h2>Todo アプリ</h2>
   <form action="/todo" method="POST">
     @csrf
-    <input type="text" name="name" placeholder="ここに名前を入れてね">
-    <input type="text" name="todo" placeholder="今日する事は何かな？">
+    <input type="text" name="name" placeholder="ここに名前を入れてね" />
+    <input type="text" name="text" placeholder="今日する事は何かな？">
     <button type="submit">TODO</button>
   </form>
 
@@ -19,7 +19,7 @@
   <ul>
     @foreach ($todo as $todo)
     <li>
-      {{ $todo->text }}
+      {{ $todo->name }}
       <form action="/todo" style="display: inline" method="POST">
        @csrf
        @method('delete')
