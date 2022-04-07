@@ -23,7 +23,7 @@ class TodoController extends Controller
     function deleteTodo($id){
         $todo = Todo::find($id);
         $todo->delete();
-        return redirect('/todo');
+        return redirect('/todo')->route('todo.index');
     }
 
 }
