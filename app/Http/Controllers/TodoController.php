@@ -14,6 +14,7 @@ class TodoController extends Controller
 
     function addTodo(Request $request){
         $todo = new Todo();
+        $todo->name = $request->name;
         $todo->text = $request->text;
         $todo->save();
         return redirect('/todo');
